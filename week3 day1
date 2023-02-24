@@ -1,0 +1,60 @@
+1.Shan is playing a game with little raghav. Shan provide a string and a char to raghav and raghav counts the occurrence of same char in the string. 
+write a program to help the raghav to find the occurrence of the char in the string.
+Input Format
+First line will contain String statement second line will contain single character
+Constraints
+Maximum length of string can be 50.
+Output Format
+one ineteger number represent the count of character .
+
+
+
+import java.io.*;
+import java.util.*;
+import java.util.Scanner;
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        String str= scan.nextLine(); 
+        char item = scan.next().charAt(0);
+        int count=0;
+        for(int i=0;i<str.length();i++)
+        {
+            if(str.charAt(i)==item)
+                count++;
+        }
+        System.out.println(count);
+    }
+}
+
+
+
+
+2.Rahul borrowed an amount from his 
+friend and he needs to repay the total amount within a year with additional interest of 10%. Find the total amount and emi that Rahul has to pay
+Input Format
+200000
+Constraints
+The borrowed amount should be in lakhs Interest is based on total amount that Rahul has borrowed from his friend Emi value round off to 2 decimal places
+Output Format
+220000 18333.33
+
+
+
+import java.io.*;
+import java.util.*;
+import java.util.Scanner;
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        double amount=scan.nextDouble();
+        double total;
+        total=(amount*1.1)/12;
+        System.out.printf("%.0f", amount*1.1);
+        System.out.println();
+        System.out.printf("%.2f",total);
+
+    }
+}
