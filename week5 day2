@@ -1,0 +1,115 @@
+1.My son Priyanshu got an assignment from his teacher to perform multiplication of complex number. Help him to complete his assignment. 
+Write a java code with following features: class Name: Complex Instance Variable: real, imaginary (int type) Constructor: ** 1. Complex() 2. Complex(int, int)
+
+**Instance Method: 1. Mul_Complex(Complex, Complex) 2. Display() Read the real and imaginary from user and pass to the constructor as parameter 
+Write a separate class Test_Complex with a main() method and test the Complex class methods
+Input Format
+First line Read the complex number 1 for real and imaginary First line Read the complex number 2 for real and imaginary
+Constraints
+real, imaginary > 1
+Output Format
+Print the Result in form of complex number : a+bi
+
+
+
+
+import java.io.*;
+import java.util.*;
+
+class Complex{
+    int real,imaginary;
+    Complex()
+    {
+        real = 0;
+        imaginary = 0;
+    }
+    Complex(int r,int i)
+    {
+        real = r;
+        imaginary = i;
+    }
+    Complex Mul_Complex(Complex c1, Complex c2)
+    {
+        Complex ans = new Complex();
+        ans.real = c1.real*c2.real - c1.imaginary*c2.imaginary;
+        ans.imaginary = c1.real*c2.imaginary + c1.imaginary*c2.real;
+        return ans;
+    }
+}
+public class Solution {
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc = new Scanner(System.in);
+        int n = 2;
+        int r1 = sc.nextInt();
+        int i1 = sc.nextInt();
+        Complex c1 = new Complex(r1,i1);
+        int r2 = sc.nextInt();
+        int i2 = sc.nextInt();
+        Complex c2 = new Complex(r2,i2);
+        Complex ans = c1.Mul_Complex(c1,c2);
+        if(ans.imaginary>0)
+        System.out.print(ans.real+"+"+ans.imaginary+"i");
+        else
+            System.out.print(ans.real+""+ans.imaginary+"i");
+    }
+}
+
+
+
+
+
+2.Write a program to make "Circle" class consisting of following: -- radius --> of double datatype -- parameterized constructor to initialize radius variable -- getArea() --> 
+returns area of Circle of double datatype (formula: 3.14 * radius * radius)
+Create array of "n" Circle objects (where "n" is no. of objects specified by user at run-time) and display the area of those Circle-objects 
+whose area is greater than 30.0.
+Input Format
+Program should take the inputs in following sequence: 1) In First input line, no. of circle objects to create. i.e. value of "n". 2) In remaining input lines, enter radius value of "n" Circle objects. For example, if no. of Circle-objects to be created are 2, 
+then user-inputs should be as follows: 2 3.2 2.5
+Constraints
+1) No. of Circle objects range between 1 to 10, i.e. 1 <= n <= 10 2) All radius value should be positive, i.e. 0.1 <= radius <= 50.0
+Output Format
+If no. of Circle-objects "n" is less than 1, then "Invalid input" should be displayed and no other input should be taken. 
+Treat any negative value of radius as 0.0 and then display area of all those circle objects with value greater than 30.0, such as follows: 32.1536
+
+
+
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+ public static void main(String[] args) {
+ double area = 0;
+ Scanner scan = new Scanner(System.in);
+ // System.out.println("Enter how many values you want ot enter: ");
+ int num = scan.nextInt();
+ if (num>1) {
+ double[] arr = new double[num];
+ // System.out.println("Enter the values here: ");
+ for (int i = 0; i < num; i++) {
+ arr[i] = scan.nextDouble();
+ }
+ for (int i = 0; i < num; i++)
+ {
+ area = (3.14) * (arr[i] * arr[i]);
+ arr[i] = area;
+ }
+ // System.out.println("The Area of the circles are: ");
+ for (int i = 0; i < num; i++)
+ {
+ if (arr[i]>30)
+ {
+ System.out.println(String.format("%.4f",arr[i]));
+ }
+ }
+ }
+ else
+ {
+ System.out.println("Invalid Input");
+ } }
+}
