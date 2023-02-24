@@ -1,0 +1,65 @@
+1.Liz built up a software code taking number of 3 different color blocks as input. Considering the end users can enter floating point numbers too as at least 1 block of a color is broken. 
+Design the code converting the not-full numbers to full numbers.
+Input Format
+Number of balls for three different colors.
+Constraints
+3 inputs separated with space can be floating points or integers.
+Output Format
+3 integer numbers
+
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        double a=scan.nextDouble();
+        double b=scan.nextDouble();
+        double c=scan.nextDouble();
+        int x=(int)Math.ceil(a);
+        int y=(int)Math.ceil(b);
+        int z=(int)Math.ceil(c);
+        System.out.println(x+" "+y+" "+z);
+        
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+    }
+}
+
+
+
+
+
+2.Write a program to take one input of double type from the user. 
+If the value is positive convert it into int and display it, otherwise display the message “Invalid Input”.
+Input Format
+Your program should take one input of double type
+Constraints
+Input should be positive double number
+Output Format
+If the input value is positive number (including 0) display the value in int type otherwise display the message “Invalid Input”.
+
+
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        double a=scan.nextDouble();
+        if(a>0)
+        {
+            int b=(int)a;
+            System.out.println(b);
+        }
+        else
+        {
+            System.out.println("Invalid Input");
+        }
+    }
+}
