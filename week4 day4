@@ -1,0 +1,91 @@
+1.write a program that creates integer array of n elements, accepts the values of arrays and find sum of elements as an integer.
+Input Format
+Accepts n values from the user.
+Constraints
+All number should be integer values (Positive, negative and zero)
+Output Format
+diplays the sum of the array's elements as a single integer.
+
+
+
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+import java.util.Arrays;
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scan=new Scanner(System.in);
+        int N=scan.nextInt();
+        int sum=0;
+        int a[]=new int[N];
+        for(int i=0;i<N;i++)
+        {
+            a[i] = scan.nextInt();
+        }
+        for(int i=0;i<N;i++)
+        {
+            sum+=a[i];
+        }
+        System.out.println(sum);
+    }
+}
+
+
+
+
+2.Karan has been given a task by Head of Librarian to implement 
+the enumeration of the Library working Day and timing. Which have the 3 attributes i.e. day and open timing 
+and close timing of the library working hours. Details of the working hours are:
+Day, open Timing, closed timing
+Monday, 8.30, 5.30 Tuesday, 8.30, 5.30 . . Friday, 8.30, 5.30 Saturdays, 9.30, 4.30
+Karan is supposed to write a main class in which the name of working days of library is taken as input as a day and timing of library should be displayed using switch statement. 
+If the input given is not matching with the listed day, display Library is closed
+Input Format
+First line of the input reads the day
+Constraints
+NA
+Output Format
+if working day than Prints the open time and closed seperated by SPACE. else Prints Library is closed
+
+
+
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc= new Scanner(System.in);
+        String str= sc.nextLine();
+        switch(str)
+        {
+            case "Monday":
+                System.out.println("8:30 5:30");
+                break;
+            case "Tuesday":
+                System.out.println("8:30 5:30");
+                break;
+            case "Wednesday":
+                System.out.println("8:30 5:30");
+                break;
+            case "Thursday":
+                System.out.println("8:30 5:30");
+                break;
+            case "Friday":
+                System.out.println("8:30 5:30");
+                break;
+            case "Saturday":
+                System.out.println("8:30 5:30");
+                break;  
+                
+        }
+    }
+}
