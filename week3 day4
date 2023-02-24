@@ -1,0 +1,69 @@
+1.Ask the user to enter an input of integer type, which represents the number of rows. If the value entered by him is greater than 0, then display the pattern of numbers as explained in example below. 
+Example: Pattern for rows to be displayed if user enters no. of rows as 5: 1 2 3 4 5 1 2 3 4 1 2 3 1 2 1
+If the input entered by user is negative no. then display the message “Invalid Rows” without any pattern.
+Input Format
+Your program should take the number of rows as integer input.
+Constraints
+Number of rows should be positive int value. i.e. 1 <= n <= 10
+Output Format
+If input given is a positive number, then display the pattern. Otherwise, if input given is a negative or zero, then display the message “Invalid Rows”.
+
+
+
+
+import java.io.*;
+import java.util.*;
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int n = scan.nextInt();
+        if(n>0)
+        {
+            for(int i=0;i<n;i++)
+            {
+                for(int j=1;j<=n-i;j++)
+                {
+                    System.out.print(j+" ");
+                }
+                System.out.println();            }
+        }
+        else
+        {
+            System.out.println("Invalid Rows");
+        }
+    }
+}
+
+
+
+
+
+2.Rahul borrowed an amount from his 
+friend and he needs to repay the total amount within a year with additional interest of 10%. Find the total amount and emi that Rahul has to pay.
+Input Format
+Input Value
+Constraints
+The borrowed amount should be in lakhs Interest is based on total amount that Rahul has borrowed from his friend Emi value round off to 2 decimal places
+Output Format
+Total Amount and EMI in teo seperate lines
+
+
+
+
+import java.io.*;
+import java.util.*;
+import java.util.Scanner;
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        double amount=scan.nextDouble();
+        double total;
+        total=(amount*1.1)/12;
+        System.out.printf("%.0f", amount*1.1);
+        System.out.println();
+        System.out.printf("%.2f",total);
+
+    }
+}
