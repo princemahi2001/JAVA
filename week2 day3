@@ -1,0 +1,86 @@
+1.Peter has been given an assignment to implement the code to convert the temprature from FORENHITE to CELCIUS and vice versa. 
+Kindly help him to implement the code such that user can choose the conversion type
+FORENHITE to CELCIUS CELCIUS to FORENHITE and then enter the value of temperature to be converted and display the temptrature in the appropriate format.
+If user enters the choice any thing else then print INVALID CHOICE
+Input Format
+First line will take the choice N (integer) as input i.e. 1 or 2 Second line will take the temperature (double) T as input
+Constraints
+N >0 and N < 3
+Output Format
+Prints the double value i.e. the temperature
+
+
+
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        DecimalFormat df = new DecimalFormat("#.##");
+        int n = scan.nextInt();
+        if(n==1)
+        {
+            double f=scan.nextDouble();
+            double cel=(f-32)*0.556;
+            df.setRoundingMode(RoundingMode.DOWN);
+            System.out.println(df.format(cel));
+        }
+        else if(n==2)
+        {
+            double c=scan.nextDouble();
+            double far=(c*1.8)+32;
+            df.setRoundingMode(RoundingMode.DOWN);
+            System.out.println(df.format(far));
+        }
+        else
+        {
+            System.out.println("INVALID CHOICE");
+        }
+    }
+}
+
+
+
+
+
+2.A student will not be allowed to sit in exam if his/her attendence is less than 75%. Take following input from user Number of classes held Number of classes attended. 
+And print percentage of class attended Is student is allowed to sit in exam or not.
+Input Format
+Number of classes held Number of classes attended.
+Constraints
+Number of classes held >= Number of classes attended. and both must be Positive integer
+Output Format
+percentage of class attended Is student is allowed to sit in exam or not.
+
+
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int h = scan.nextInt();
+        int a = scan.nextInt();
+        if(h>=a && h>0 && a>0)
+        {
+            int res=(a*100)/h;
+            if(res>75)
+            {
+                System.out.println(res);
+                System.out.println("Yes");
+            }
+            else
+            {
+                System.out.println(res);
+                System.out.println("No");
+            }
+        }
+    }
+}
