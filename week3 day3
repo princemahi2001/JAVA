@@ -1,0 +1,164 @@
+1.Sameer wants to develop a program for ATM. Help him by constructing the program for the same. In the program if user withdraws amount upto 1000 then machine will dispence Rs. 100 notes only. 
+Minimum number of notes should be dispenced by the machine. Notes of denomination of 100,200,500 and 2000 are available in machine.
+Input Format
+One integer value between 100-20000.
+Constraints
+Maximum withdrawl amount should be 20000, Minimum should be 100 and amount should be in the multiple of 100 only.
+Output Format
+Print the number of notes dispenced and their denomination.
+
+
+
+import java.util.*;
+public class dsa{
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int n= input.nextInt();
+        String tw = "2000 Notes";
+        String fi = "500 Notes";
+        String on = "100 Notes";
+        String[] arr = new String[3];
+        if(n>0&&n<20000){
+            int two =0;
+            int five=0;
+            int one=0;
+            int twoh=0;
+            int note =0;
+            if(n%100==0){
+                note =(int)n/2000;
+                if(note>0){
+                    two =note;
+                }
+                n=n-note*2000;
+                note=(int)n/500;
+                if(note>0){
+                    five=note;
+                }
+                n=n-500*note;
+                note=(int)n/200;
+                if(note>0){
+                    twoh=note;
+                }
+                n=n-200*note;
+                note=(int)n/100;
+                if(note>0){
+                    one=note;
+                }
+                if(one>=1){
+                    System.out.println(one+" "+on);
+                }
+                if(twoh>=1){
+                    System.out.println(twoh+" 200 Notes");
+                }
+                if(five>=1){
+                    System.out.println(five+" "+fi);
+                }
+                if(two>=1){
+                    System.out.println(two+" "+tw);
+                }
+            }
+            else{
+                System.out.println("Invalid Input");
+            }
+        }
+        else{
+            System.out.println("Invalid Input");
+        }
+    }
+}
+
+
+
+
+2.Sajal and Ruhi are playing a game.
+Sajal is going to tell one number and one operation (Even, Odd, Prime and Factorial), Ruhi have to apply the operation and tell the output.
+Input Format
+Two space seperated numbers, first number on which need to apply operation and second number will be 1 for checking the number is even or not, 
+2 for checking number is odd or not, 3 for checking number is prime or not and 4 for calculating factorial of number.
+Constraints
+First number will be positive integer value. Second number can be in range of 1 to 4.
+Output Format
+Yes / No for first three operations and an integer value if operation four is performed.
+
+
+
+
+import java.util.Scanner;
+
+public class Main {
+
+   public static void main(String[] args) {
+
+      Scanner sc = new Scanner(System.in);
+
+      int n = sc.nextInt();
+
+      int op = sc.nextInt();
+
+      int fact = 1;
+
+      boolean prime = true;
+
+      if (op == 1) {
+
+         if (n % 2 == 0) {
+
+            System.out.println("YEs");
+
+         } else {
+
+            System.out.println("NO");
+
+         }
+
+      } else if (op == 2) {
+
+         if (n % 2 != 0) {
+
+            System.out.println("YES");
+
+         } else {
+
+            System.out.println("NO");
+
+         }
+
+      } else if (op == 3) {
+
+         for (int i = 2; i <= n / 2; i++) {
+
+            if (n % i == 0) {
+
+               prime = false;
+
+               break;
+
+            }
+
+         }
+
+         if (prime) {
+
+            System.out.println("YES");
+
+         } else {
+
+            System.out.println("NO");
+
+         }
+
+      } else if (op == 4) {
+
+         for (int i = 1; i <= n; i++) {
+
+            fact = fact * i;
+
+         }
+
+         System.out.println(fact);
+
+      }
+
+   }
+
+}
