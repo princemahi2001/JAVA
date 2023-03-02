@@ -1,0 +1,74 @@
+1)It's PTM tomorrow in Cambridge School.Teachers want to show the grades from(A to E) depending on the percentage of the student. Help the teacher's by developing the program for the same.To find the grade of a student, given the marks of N subjects. 
+Given the marks of N subjects, we have to print the grade of a student based on the following grade slab.
+If Percentage Marks > 90, Grade is A+ If 70 <= Percentage Marks <= 89, Grade is A If 60 <= Percentage Marks <= 69, 
+Grade is B If 50 <= Percentage Marks <= 59, Grade is C If Percentage Marks <= 40, Grade is D
+Input Format
+Integer Value to enter number of subjects, count Enter marks of subjects depending upon the the total number of subjects
+Constraints
+Number of subjects should not exceed 7
+Output Format
+Character output to show grades
+
+
+import java.io.*;
+import java.util.*;
+public class Solution {
+    public static void main(String[] args) 
+    {
+        Scanner n=new Scanner(System.in);
+        int x=n.nextInt();
+        int a[]=new int[x];
+        int sum=0;
+        if(x>7)
+        {
+            System.out.println("Invalid");
+            System.exit(0);
+        }
+        for(int i=0; i<x; i++)
+            a[i]=n.nextInt();
+        for(int i=0; i<x; i++)
+            sum+=a[i];
+        int total=sum/x;
+        if(total>90) System.out.println("A+");
+        else if(total>=70 && total<=89) System.out.println("A");
+        else if(total>=60 && total<=69) System.out.println("B");
+        else if(total>=50 && total<=59) System.out.println("C");
+        else if(total<=49) System.out.println("D");    
+    }
+}
+
+
+
+
+2)Sushant and Virat are playing a game. Virat tells 2 numbers to Sushant, who need to check whether the first is bigger than second. 
+Implement a method boolean isBigger(int a, int b) which returns true if a is bigger than b and false otherwise.
+Input Format
+Two space separated integer value representing numbers given by Virat
+Constraints
+Numbers will lie between 10 and 1000.
+Output Format
+true/false according to the value returned by the method or will print Invalid Input in case of numbers did not match the constraints.
+
+
+
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int a=in.nextInt();
+        int b=in.nextInt();
+        if(a>b)
+        {
+            System.out.print("true");
+        }
+        else
+        {
+            System.out.print("false");
+        }
+    }
+}
